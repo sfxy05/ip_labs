@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>lab4</title>
 </head>
+
+
+
 <body>
-    
+    <main>
+        <section>
+            <h2>Форма картки студента</h2>
+                <fieldset>
+                    <legend><p><h3>Персональні дані</h3></p></legend>
+                        <form action="sent.php" method="post">
+                            <label for="name">ПІБ:</label>
+                            <input type="text" name="name" id="name"> <p></p>
+                            <label for="email">Email:</label>
+                            <input type="email" name="Email" id="email"><p></p>
+                            <label for="password">Пароль:</label>
+                            <input type="password" id="password" name="password"> <p></p>
+                            <label for="age">Вік:</label>
+                            <input type="age" name="age" id="age"><p></p>
+                            <label for="age">Вік:</label>
+                            <input type="date" name="age" id="age"><p></p>
+                            <label for="gender">Гендер:</label><p></p>
+                            <label><input type="radio" name="gender" id="gender">Чоловік</label> <p></p>
+                            <label><input type="radio" name="gender" id="gender">Жінка</label><p></p>
+                            <label><input type="radio" name="gender" id="gender">Інше</label> <p></p>
+                            <label for="gender">Мови:</label><p></p>
+                            <label><input type="checkbox" name="lang" id="lang">Англійська</label><p></p>
+                            <label><input type="checkbox" name="lang" id="lang">Українська</label><p></p>
+                            <select name="country">
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="USA">USA</option>
+                            </select>
+        
+
+                </fieldset>
+        </section>
+    <h2>Предмети</h2>
+    <fieldset>
+            <legend><p><h3>Оберіть предмети</h3></p></legend>
+            <select multiple name="subjects">
+                <option value="math">Математика</option>
+                <option value="eng">Англійська мова</option>
+                <option value="ua">Українськаа мова</option>
+                <option value="che">Хімія</option>
+            </select> <p></p>
+                <label for="interest">Вкажіть вашу зацікавленість до навчання:</label>
+                <input type="range" name="interest" id="interest">
+    </fieldset>
+        <h2>Ваші навички</h2>
+    <fieldset>
+            <legend><p><h3>Про ваші навички</h3></p></legend>
+            <label for="skills">Опишіть свої навички:</label><p></p>
+            <textarea id="skills" name="skills" placeholder="Вкажіть ваші навички" rows="4" cols="40"></textarea><p></p>
+            <label for="resume">Завантажте резюме:</label>
+            <input type="file" id="resume" name="resume"><p></p>
+            <label for="color">Оберіть свій  улюблений колір:</label>
+            <input type="color" id="color" name="color"><p></p>
+            <label for="time">Час навчання:</label>
+            <input type="time" id="time" name="time"><p></p>
+            <input type="submit" value="Надіслати форму">
+
+    </fieldset>
+        </form>
+    </main>
 </body>
 </html>

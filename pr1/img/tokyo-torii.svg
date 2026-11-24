@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fec89a"/><stop offset="1" stop-color="#f4845f"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <circle cx="640" cy="110" r="55" fill="#fff" opacity=".35"/>
+  <g fill="#1b1b2f" opacity=".85"><rect x="0" y="420" width="800" height="80"/><rect x="250" y="160" width="300" height="24" fill="#c0392b"/><rect x="270" y="210" width="260" height="16" fill="#c0392b"/><rect x="290" y="184" width="26" height="236" fill="#c0392b"/><rect x="484" y="184" width="26" height="236" fill="#c0392b"/></g>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">Святилище Мейдзі</text>
+</svg>

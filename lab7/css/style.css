@@ -1,0 +1,654 @@
+/* ===================== Лабораторна робота #7 =====================
+   Flexbox (header), Grid (новини), transitions, animations,
+   медіа-запити: Mobile <=767px, Tablet 768–1023px, Desktop >=1024px
+   ================================================================= */
+
+:root {
+    --primary: #00529b;
+    --primary-dark: #0a2a52;
+    --accent: #f5b400;
+    --text: #1d1d1f;
+    --muted: #6b7280;
+    --bg: #f4f6fa;
+    --card: #ffffff;
+    --radius: 12px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, .08);
+    --shadow-hover: 0 14px 30px rgba(0, 40, 90, .18);
+    --transition: .3s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ============================ ANIMATIONS ============================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-100%); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(245, 180, 0, .6); }
+    50%      { box-shadow: 0 0 0 12px rgba(245, 180, 0, 0); }
+}
+
+@keyframes bgMove {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
+}
+
+/* ===================== HEADER#hero_container (FLEX) ===================== */
+#hero_container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #fff;
+    background:
+        linear-gradient(90deg, rgba(10, 42, 82, .85), rgba(0, 82, 155, .35)),
+        url("../img/hero.svg") center / cover no-repeat;
+}
+
+/* --- верхня панель --- */
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 5%;
+    animation: slideDown .7s ease-out both;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--primary);
+    font-weight: 800;
+    transition: transform .6s ease;
+}
+
+.logo:hover .logo-mark {
+    transform: rotate(360deg);
+}
+
+.logo-text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.main-nav a {
+    position: relative;
+    padding: 6px 0;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+/* підкреслення, що "виїжджає" при наведенні */
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.lang {
+    display: flex;
+    gap: 6px;
+}
+
+.lang a {
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.lang a.active,
+.lang a:hover {
+    background: #fff;
+    color: var(--primary);
+}
+
+/* бургер (видно лише на мобільних) */
+.menu-toggle {
+    display: none;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.burger span {
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+/* --- hero --- */
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 5% 60px;
+}
+
+.hero-content {
+    flex: 1 1 60%;
+    max-width: 700px;
+}
+
+.hero-content > * {
+    animation: fadeInUp .8s ease-out both;
+}
+
+.hero-content > :nth-child(2) { animation-delay: .15s; }
+.hero-content > :nth-child(3) { animation-delay: .3s; }
+.hero-content > :nth-child(4) { animation-delay: .45s; }
+
+.hero-subtitle {
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-title {
+    margin: 10px 0 20px;
+    font-size: 56px;
+    line-height: 1.1;
+}
+
+.hero-text {
+    margin-bottom: 30px;
+    font-size: 18px;
+    opacity: .9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: transform var(--transition), background-color var(--transition),
+                color var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--primary-dark);
+    animation: pulse 2s infinite 1.5s;
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: var(--primary);
+}
+
+.hero-stats {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+}
+
+.hero-stats li {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 26px;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(4px);
+    animation: fadeInUp .8s ease-out both;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.hero-stats li:nth-child(2) { animation-delay: .6s; }
+.hero-stats li:nth-child(3) { animation-delay: .75s; }
+.hero-stats li:first-child  { animation-delay: .45s; }
+
+.hero-stats li:hover {
+    background: rgba(255, 255, 255, .2);
+    transform: translateX(-6px);
+}
+
+.hero-stats strong {
+    font-size: 32px;
+    line-height: 1.1;
+}
+
+.hero-stats span {
+    font-size: 14px;
+    opacity: .85;
+}
+
+/* ===================== MAIN: div.main-container ===================== */
+.main-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 60px 5%;
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.news-header h2 {
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 34px;
+    color: var(--primary-dark);
+}
+
+.news-header h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--accent);
+}
+
+.news-all {
+    color: var(--primary);
+    font-weight: 700;
+    transition: letter-spacing var(--transition), color var(--transition);
+}
+
+.news-all:hover {
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+}
+
+/* ---------- GRID новин (Desktop за замовчуванням: 4 колонки) ---------- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    gap: 24px;
+}
+
+.news-card {
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    animation: fadeInUp .6s ease-out both;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.news-card:nth-child(2) { animation-delay: .1s; }
+.news-card:nth-child(3) { animation-delay: .2s; }
+.news-card:nth-child(4) { animation-delay: .3s; }
+.news-card:nth-child(5) { animation-delay: .4s; }
+.news-card:nth-child(6) { animation-delay: .5s; }
+.news-card:nth-child(7) { animation-delay: .6s; }
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.news-card > a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* головна новина займає 2 колонки */
+.news-card--featured {
+    grid-column: span 2;
+}
+
+.news-image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.news-card--featured .news-image {
+    aspect-ratio: auto;
+    flex: 1;
+    min-height: 200px;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.08);
+}
+
+.news-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 10px;
+    padding: 18px 20px 20px;
+}
+
+.news-tag {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(0, 82, 155, .1);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.news-card:hover .news-tag {
+    background: var(--primary);
+    color: #fff;
+}
+
+.news-title {
+    flex-grow: 1;
+    font-size: 17px;
+    line-height: 1.35;
+    transition: color var(--transition);
+}
+
+.news-card--featured .news-title {
+    font-size: 22px;
+}
+
+.news-card:hover .news-title {
+    color: var(--primary);
+}
+
+.news-date {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ============================== FOOTER ============================== */
+.footer {
+    padding: 24px 5%;
+    background: var(--primary-dark);
+    color: #fff;
+    text-align: center;
+}
+
+.footer a {
+    color: var(--accent);
+    transition: opacity var(--transition);
+}
+
+.footer a:hover {
+    opacity: .7;
+}
+
+/* ====================== TABLET: 768px – 1023px ====================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .top-bar {
+        justify-content: center;
+    }
+
+    .logo {
+        flex: 1 1 auto;
+    }
+
+    .main-nav {
+        order: 3;
+        flex-basis: 100%;
+    }
+
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-title {
+        font-size: 44px;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .hero-stats li {
+        flex: 1 1 0;
+    }
+
+    /* 2 колонки новин */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* ========================= MOBILE: до 767px ========================= */
+@media (max-width: 767px) {
+    .top-bar {
+        padding: 16px 20px;
+    }
+
+    .burger {
+        display: flex;
+        order: 2;
+    }
+
+    .lang {
+        order: 1;
+        margin-left: auto;
+    }
+
+    /* меню у вигляді колонки, розкривається бургером */
+    .main-nav {
+        order: 3;
+        flex-basis: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .4s ease;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 0;
+    }
+
+    .menu-toggle:checked ~ .main-nav {
+        max-height: 400px;
+    }
+
+    .menu-toggle:checked + .burger span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .burger span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 20px 40px;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 34px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero-stats li {
+        flex: 1 1 120px;
+        align-items: center;
+        padding: 12px;
+        border-left: none;
+        border-top: 4px solid var(--accent);
+        border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    .hero-stats strong {
+        font-size: 24px;
+    }
+
+    .main-container {
+        padding: 40px 20px;
+    }
+
+    .news-header h2 {
+        font-size: 26px;
+    }
+
+    /* 1 колонка новин */
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .news-card--featured {
+        grid-column: auto;
+    }
+
+    .news-card--featured .news-image {
+        aspect-ratio: 16 / 10;
+        flex: none;
+        min-height: 0;
+    }
+
+    .news-card--featured .news-title {
+        font-size: 18px;
+    }
+}
+
+/* повага до налаштувань користувача щодо анімацій */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

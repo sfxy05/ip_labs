@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bde0fe"/><stop offset="1" stop-color="#577590"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <circle cx="640" cy="110" r="55" fill="#fff" opacity=".35"/>
+  <g fill="#1b1b2f" opacity=".85"><rect x="0" y="420" width="800" height="80"/><polygon points="400,120 700,420 100,420"/><polygon points="400,120 460,180 430,175 400,195 370,175 340,180" fill="#fff"/></g>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">Гора Фудзі</text>
+</svg>

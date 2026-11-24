@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підписка | Global Adventures Blog</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Підписка на новини <span role="img" aria-label="поштова скринька">📬</span></h1>
+        <p>Хочете першими дізнаватися про нові міста й поради для мандрівників? Підпишіться на нашу розсилку!</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="paris.html">Париж</a></li>
+            <li><a href="rome.html">Рим</a></li>
+            <li><a href="tokyo.html">Токіо</a></li>
+            <li><a href="gallery.html">Галерея</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+            <li><a href="subscribe.html">Підписка</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Форма підписки</h2>
+            <form action="#" method="post">
+                <label for="subscribe-email">Ваш email:</label>
+                <input type="email" id="subscribe-email" name="email" placeholder="you@example.com" required>
+
+                <p>
+                    <input type="checkbox" id="consent" name="consent" required>
+                    <label for="consent" style="display:inline">Я погоджуюся отримувати розсилку блогу</label>
+                </p>
+
+                <button type="submit">Підписатися</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="Корисні посилання">
+            <ul>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Політика конфіденційності</a></li>
+                <li><a href="#">Умови використання</a></li>
+            </ul>
+        </nav>
+        <div class="social-media">
+            <a href="#" title="Faceblock"><img src="img/facebook.svg" alt="Faceblock" width="32" height="32"></a>
+            <a href="#" title="Tweety"><img src="img/twitter.svg" alt="Tweety" width="32" height="32"></a>
+            <a href="#" title="Instadrama"><img src="img/instagram.svg" alt="Instadrama" width="32" height="32"></a>
+        </div>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:hello@sofia-adventures.blog">hello@sofia-adventures.blog</a> · <a href="contact.html">Сторінка контактів</a></p>
+        </div>
+        <p>&copy; 2035 Sofia Adventures Blog. Усі права захищено.</p>
+    </footer>
+</body>
+</html>

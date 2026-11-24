@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Trivia — перевір свої знання про світ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Перейти до основного вмісту</a>
+
+    <header>
+        <nav aria-label="Головне меню">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trivia">Trivia</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#scores">Scores</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- ===== Home ===== -->
+        <section id="home">
+            <h1>Ласкаво просимо до World Trivia!</h1>
+            <p>
+                World Trivia — це сайт для тих, хто любить дізнаватися нове про нашу планету.
+                Відповідайте на запитання про країни, столиці, природу та історію, змагайтеся
+                з гравцями з усього світу та піднімайтеся в таблиці результатів.
+            </p>
+        </section>
+
+        <!-- ===== Trivia ===== -->
+        <section id="trivia">
+            <h2>Trivia: цікаві факти</h2>
+
+            <article class="trivia-item">
+                <img src="img/globe.svg" alt="Схематичне зображення земної кулі">
+                <div>
+                    <h3>Скільки країн у світі?</h3>
+                    <p>Організація Об’єднаних Націй налічує 193 держави-члени. Ще дві держави —
+                       Ватикан і Палестина — мають статус спостерігачів.</p>
+                </div>
+            </article>
+
+            <article class="trivia-item">
+                <img src="img/mountain.svg" alt="Гора зі сніговою вершиною">
+                <div>
+                    <h3>Найвища гора планети</h3>
+                    <p>Еверест (Джомолунгма) має висоту 8 849 метрів над рівнем моря
+                       і розташований на кордоні Непалу та Китаю.</p>
+                </div>
+            </article>
+
+            <article class="trivia-item">
+                <img src="img/ocean.svg" alt="Вітрильник на хвилях океану">
+                <div>
+                    <h3>Найбільший океан</h3>
+                    <p>Тихий океан займає майже третину поверхні Землі — він більший
+                       за всю сушу планети разом узяту.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- ===== Categories ===== -->
+        <section id="categories">
+            <h2>Categories</h2>
+            <ul class="categories-list">
+                <li><a href="#">Географія</a></li>
+                <li><a href="#">Історія</a></li>
+                <li><a href="#">Столиці</a></li>
+                <li><a href="#">Прапори</a></li>
+                <li><a href="#">Природа</a></li>
+                <li><a href="#">Культура</a></li>
+            </ul>
+        </section>
+
+        <!-- ===== Scores ===== -->
+        <section id="scores">
+            <h2>Scores</h2>
+            <div class="table-wrapper">
+                <table>
+                    <caption class="visually-hidden">Таблиця найкращих результатів гравців</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Score</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Олена</td><td>980</td><td>Україна</td><td>Географія</td><td>2026-11-20</td></tr>
+                        <tr><td>2</td><td>Lukas</td><td>945</td><td>Німеччина</td><td>Історія</td><td>2026-11-19</td></tr>
+                        <tr><td>3</td><td>Aiko</td><td>910</td><td>Японія</td><td>Столиці</td><td>2026-11-18</td></tr>
+                        <tr><td>4</td><td>Marco</td><td>870</td><td>Італія</td><td>Культура</td><td>2026-11-17</td></tr>
+                        <tr><td>5</td><td>Emma</td><td>855</td><td>Канада</td><td>Природа</td><td>2026-11-15</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ===== Subscribe ===== -->
+        <section id="subscribe">
+            <h2>Subscribe</h2>
+            <p>Отримуйте щодня нову головоломку на свою пошту!</p>
+            <button type="button" class="subscribe-btn" aria-label="Підписатися на розсилку Puzzle of the Day">
+                Підписатися на «Puzzle of the Day»
+            </button>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Маєте запитання чи ідею для нової категорії? Напишіть нам!</p>
+            <form action="#" method="post" class="contact-form">
+                <label for="name">Ім’я</label>
+                <input type="text" id="name" name="name" placeholder="Ваше ім’я" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="message">Повідомлення</label>
+                <textarea id="message" name="message" rows="5" placeholder="Ваше повідомлення" required></textarea>
+
+                <button type="submit">Надіслати</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 World Trivia. Sofia Yatsun TK-41.</p>
+        <p><a href="../index.html">На головну сторінку курсу</a></p>
+    </footer>
+</body>
+</html>

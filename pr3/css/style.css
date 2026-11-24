@@ -1,0 +1,274 @@
+/* ===== Практична робота 3 — World Trivia ===== */
+
+/* ---------- Сторінка (3.4) ---------- */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Доступність (3.11) ---------- */
+/* Текст лише для screen reader */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Посилання "перейти до вмісту" — видно лише при фокусі з клавіатури */
+.skip-link {
+    position: absolute;
+    left: 10px;
+    top: -40px;
+    padding: 8px 12px;
+    background: #0654b3;
+    color: white;
+    z-index: 10;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f5a623;
+    outline-offset: 2px;
+}
+
+/* ---------- Шапка і меню (3.3, 3.4) ---------- */
+header {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    margin: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Секції (3.5) ---------- */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+h1,
+h2 {
+    color: #0654b3;
+}
+
+/* ---------- Trivia (3.6) ---------- */
+.trivia-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.trivia-item img {
+    width: 150px;
+    margin-right: 20px;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+.trivia-item h3 {
+    margin-top: 0;
+}
+
+/* ---------- Categories (3.7) ---------- */
+.categories-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.categories-list li {
+    margin: 5px;
+}
+
+.categories-list a {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #0654b3;
+    border-radius: 20px;
+    color: #0654b3;
+    text-decoration: none;
+    transition: background-color .3s, color .3s;
+}
+
+.categories-list a:hover {
+    background-color: #0654b3;
+    color: white;
+}
+
+/* ---------- Scores (3.8) ---------- */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e8f0fb;
+}
+
+/* ---------- Subscribe (3.10) ---------- */
+.subscribe-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: white;
+    background-color: #0654b3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: pulse 2s infinite;
+    transition: background-color .3s;
+}
+
+.subscribe-btn:hover {
+    background-color: #043d82;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(6, 84, 179, .6);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 12px rgba(6, 84, 179, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(6, 84, 179, 0);
+    }
+}
+
+/* ---------- Contact (3.9) ---------- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-top: 10px;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.contact-form button:hover {
+    background-color: #0654b3;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-color: #333;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: white;
+}
+
+/* ---------- Адаптивність ---------- */
+@media (max-width: 600px) {
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .trivia-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .trivia-item img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+/* Користувачам, які вимкнули анімації, пульсація не показується */
+@media (prefers-reduced-motion: reduce) {
+    .subscribe-btn {
+        animation: none;
+    }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#89c2d9"/><stop offset="1" stop-color="#2a6f97"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <circle cx="640" cy="110" r="55" fill="#fff" opacity=".35"/>
+  <g fill="#1b1b2f" opacity=".85"><rect x="0" y="420" width="800" height="80"/><polygon points="400,200 540,420 260,420" opacity=".9"/><rect x="60" y="340" width="180" height="80"/><rect x="560" y="340" width="180" height="80"/></g>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">Лувр</text>
+</svg>

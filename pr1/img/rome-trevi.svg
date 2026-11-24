@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8dadc"/><stop offset="1" stop-color="#457b9d"/></linearGradient></defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <circle cx="640" cy="110" r="55" fill="#fff" opacity=".35"/>
+  <g fill="#1b1b2f" opacity=".85"><rect x="0" y="420" width="800" height="80"/><rect x="200" y="220" width="400" height="200"/><rect x="380" y="260" width="40" height="100" fill="#f4c27a"/><rect x="200" y="380" width="400" height="40" fill="#3a6ea5"/></g>
+  <text x="400" y="470" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#fff" text-anchor="middle">Фонтан Треві</text>
+</svg>

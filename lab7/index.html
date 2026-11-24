@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота #7: Flexbox, Grid, transitions та animations</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER (варіант 2: header#hero_container) ============ -->
+<header id="hero_container">
+    <!-- Верхня панель: логотип + навігація + перемикач мови (flex) -->
+    <div class="top-bar">
+        <a href="#" class="logo">
+            <span class="logo-mark">ЛП</span>
+            <span class="logo-text">Львівська<br>політехніка</span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="burger" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </label>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Університет</a></li>
+                <li><a href="#">Вступ</a></li>
+                <li><a href="#">Освіта</a></li>
+                <li><a href="#">Наука</a></li>
+                <li><a href="#news">Новини</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </nav>
+
+        <div class="lang">
+            <a href="#" class="active">UA</a>
+            <a href="#">EN</a>
+        </div>
+    </div>
+
+    <!-- Hero-блок (flex) -->
+    <div class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Національний університет</p>
+            <h1 class="hero-title">Львівська політехніка</h1>
+            <p class="hero-text">
+                Один з найстаріших технічних університетів Європи. Понад 180 років досвіду
+                підготовки інженерів, науковців та лідерів.
+            </p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Вступникам</a>
+                <a href="#news" class="btn btn-outline">Новини</a>
+            </div>
+        </div>
+
+        <ul class="hero-stats">
+            <li><strong>1844</strong><span>рік заснування</span></li>
+            <li><strong>16</strong><span>інститутів</span></li>
+            <li><strong>30 000+</strong><span>студентів</span></li>
+        </ul>
+    </div>
+</header>
+
+<!-- ============ MAIN: div.main-container → "Новини університету" (grid) ============ -->
+<main>
+    <div class="main-container">
+        <section id="news" class="news">
+            <div class="news-header">
+                <h2>Новини університету</h2>
+                <a href="#" class="news-all">Всі новини &rarr;</a>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card news-card--featured">
+                    <a href="#">
+                        <div class="news-image"><img src="img/news1.svg" alt="Новина 1"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Університет</span>
+                            <h3 class="news-title">Львівська політехніка увійшла до світового рейтингу університетів</h3>
+                            <time class="news-date" datetime="2026-11-20">20 листопада 2026</time>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-card">
+                    <a href="#">
+                        <div class="news-image"><img src="img/news2.svg" alt="Новина 2"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Наука</span>
+                            <h3 class="news-title">Науковці розробили нову систему моніторингу енергомереж</h3>
+                            <time class="news-date" datetime="2026-11-19">19 листопада 2026</time>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-card">
+                    <a href="#">
+                        <div class="news-image"><img src="img/news3.svg" alt="Новина 3"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Студентам</span>
+                            <h3 class="news-title">Стартує реєстрація на зимову школу програмування</h3>
+                            <time class="news-date" datetime="2026-11-18">18 листопада 2026</time>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-card">
+                    <a href="#">
+                        <div class="news-image"><img src="img/news4.svg" alt="Новина 4"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Міжнародне</span>
+                            <h3 class="news-title">Підписано меморандум про співпрацю з європейськими університетами</h3>
+                            <time class="news-date" datetime="2026-11-17">17 листопада 2026</time>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-card">
+                    <a href="#">
+                        <div class="news-image"><img src="img/news5.svg" alt="Новина 5"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Події</span>
+                            <h3 class="news-title">День відкритих дверей Інституту телекомунікацій</h3>
+                            <time class="news-date" datetime="2026-11-15">15 листопада 2026</time>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-card">
+                    <a href="#">
+                        <div class="news-image"><img src="img/news6.svg" alt="Новина 6"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Спорт</span>
+                            <h3 class="news-title">Збірна університету перемогла у чемпіонаті з волейболу</h3>
+                            <time class="news-date" datetime="2026-11-14">14 листопада 2026</time>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-card">
+                    <a href="#">
+                        <div class="news-image"><img src="img/news7.svg" alt="Новина 7"></div>
+                        <div class="news-body">
+                            <span class="news-tag">Культура</span>
+                            <h3 class="news-title">У головному корпусі відкрилася виставка студентських робіт</h3>
+                            <time class="news-date" datetime="2026-11-12">12 листопада 2026</time>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 Лабораторна робота #7. <a href="../index.html">На головну</a></p>
+</footer>
+
+</body>
+</html>
